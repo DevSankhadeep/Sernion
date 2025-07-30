@@ -63,10 +63,10 @@ footer {
 }
 
 input[type="email"] {
-  padding: 10px;
+  padding: 15px;
   border: none;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  border-radius: 50px;
+  margin-bottom: 20px;
   width: 100%;
   max-width: 400px;
   font-size: 1rem;
@@ -84,7 +84,7 @@ button[type="submit"] {
   background: linear-gradient(135deg, #0066ff, #00c3ff);
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   font-family: "Orbitron", sans-serif;
   font-size: 0.9rem;
   cursor: pointer;
