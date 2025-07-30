@@ -1,85 +1,65 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sernion – The Future Awaits</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #0f0f0f, #000000);
-      color: #00f5ff;
-      font-family: 'Orbitron', sans-serif;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      overflow: hidden;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sernion – The Future Awaits</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Sernion</h1>
+    <p>
+      Something powerful is in the making.<br />
+      A revolution in intelligence — redefined by data.<br />
+      Are you ready to see what's next?
+    </p>
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5em;
-      text-shadow: 0 0 12px #00f5ff;
-      animation: glow 2s ease-in-out infinite alternate;
-    }
+    <p class="teaser">Launching Soon. You won't want to miss it.</p>
 
-    p {
-      font-size: 1.2rem;
-      color: #c0d0d8;
-      max-width: 600px;
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
+    <form
+      id="waiting-list-form"
+      action="https://script.google.com/macros/s/AKfycbyQlA_5DqvUR9Q10HxavSOVJh-3ObA5ZHWFwIb6HHcQF21_HIo1FqvWA5dR6GcGAvcD2Q/exec"
+      method="POST"
+      style="max-width: 400px; margin: auto"
+    >
+      <label for="waiting-email" style="display: block; margin-bottom: 8px">Join the waiting list:</label>
+      <input type="email" id="waiting-email" name="email" placeholder="Enter your email" required />
+      <button type="submit" style="width: 100%; padding: 10px">Join</button>
+    </form>
+    <div id="waiting-list-message" style="text-align: center; margin-top: 10px"></div>
 
-    .teaser {
-      font-style: italic;
-      color: #777;
-      margin-top: 10px;
-      font-size: 0.95rem;
-    }
+    <footer>© 2025 Sernion. All Rights Reserved.</footer>
 
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 5px #00f5ff, 0 0 10px #00f5ff;
-      }
-      to {
-        text-shadow: 0 0 20px #00f5ff, 0 0 30px #00f5ff;
-      }
-    }
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('waiting-list-form');
+        const messageDiv = document.getElementById('waiting-list-message');
 
-    footer {
-      position: absolute;
-      bottom: 20px;
-      color: #444;
-      font-size: 0.8rem;
-    }
+        if (form) {
+          form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(form);
 
-    @media(max-width: 600px) {
-      h1 { font-size: 2rem; }
-      p { font-size: 1rem; padding: 0 20px; }
-    }
-  </style>
-</head>
-<body>
-
-  <h1>Sernion</h1>
-  <p>
-    Something powerful is in the making.<br/>
-    A revolution in intelligence — redefined by data.<br/>
-    Are you ready to see what's next?
-  </p>
-
-  <p class="teaser">Launching Soon. You won't want to miss it.</p>
-
-  <footer>© 2025 Sernion. All Rights Reserved.</footer>
-
-</body>
+            fetch(form.action, {
+              method: 'POST',
+              mode: 'no-cors',
+              body: formData
+            })
+              .then(() => {
+                messageDiv.textContent = '🎉 Thank you! You have been added to the waiting list.';
+                messageDiv.style.color = 'green';
+                form.reset();
+              })
+              .catch((error) => {
+                messageDiv.textContent = '❌ Sorry, something went wrong.';
+                messageDiv.style.color = 'red';
+                console.error('Error:', error);
+              });
+          });
+        }
+      });
+    </script>
+  </body>
 </html>
-
-
-
