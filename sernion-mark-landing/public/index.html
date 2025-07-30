@@ -1,62 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sernion Mark - AI Annotation Platform</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <div class="background-animation">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sernion – The Future Awaits</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #0f0f0f, #000000);
+      color: #00f5ff;
+      font-family: 'Orbitron', sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
 
-      <div class="content">
-        <div class="logo">
-          <h1 class="brand-name">Sernion Mark</h1>
-          <p class="tagline">AI Annotation Platform</p>
-        </div>
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5em;
+      text-shadow: 0 0 12px #00f5ff;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
 
-        <div class="coming-soon">
-          <h2 class="main-title">Coming Soon</h2>
-          <p class="description">
-            We're building something incredible. An advanced AI-powered
-            annotation platform that will revolutionize how you work with data.
-          </p>
+    p {
+      font-size: 1.2rem;
+      color: #c0d0d8;
+      max-width: 600px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
 
-          <div class="loading-animation">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-          </div>
-        </div>
+    .teaser {
+      font-style: italic;
+      color: #777;
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
 
-        <div class="notify-section">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            class="email-input"
-          />
-          <button class="notify-btn">Notify Me</button>
-        </div>
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #00f5ff, 0 0 10px #00f5ff;
+      }
+      to {
+        text-shadow: 0 0 20px #00f5ff, 0 0 30px #00f5ff;
+      }
+    }
 
-        <div class="social-links">
-          <div class="social-icon"></div>
-          <div class="social-icon"></div>
-          <div class="social-icon"></div>
-        </div>
-      </div>
-    </div>
-  </body>
+    footer {
+      position: absolute;
+      bottom: 20px;
+      color: #444;
+      font-size: 0.8rem;
+    }
+
+    @media(max-width: 600px) {
+      h1 { font-size: 2rem; }
+      p { font-size: 1rem; padding: 0 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Sernion</h1>
+  <p>
+    Something powerful is in the making.<br/>
+    A revolution in intelligence — redefined by data.<br/>
+    Are you ready to see what's next?
+  </p>
+
+  <p class="teaser">Launching Soon. You won't want to miss it.</p>
+
+  <footer>© 2025 Sernion. All Rights Reserved.</footer>
+
+</body>
 </html>
+
+
+
